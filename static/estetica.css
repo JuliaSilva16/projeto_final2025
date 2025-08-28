@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #BD4223;
+    padding: 40px 0;
+    color: #DFA596;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar{
+    background: #fda980;
+}
+
+.conteiner, body{
+    background: #f1e9e5;
+
+}
+
+/* Estilos globais */
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Fundo mais suave e moderno */
+    color: #333333; /* Cor de texto mais neutra */
+}
+
+.login {
+    background-image: url("fundo_tela.jpg"); /* Caminho da imagem */
+    background-repeat: no-repeat; /* Para não repetir a imagem */
+    background-size: cover; /* Para a imagem cobrir toda a página */
+
+    margin: 0; /* Remove qualquer margem padrão do body */
+    display: flex; /* Habilita o flexbox no body para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+}
+
+#quadrado-centralizado {
+    width: 900px; /* Largura do quadrado */
+    height: 700px; /* Altura do quadrado */
+    background-color: #9F4028; /* Cor de fundo para o quadrado */
+    /* O posicionamento via flexbox já faz a centralização,mas se preferir usar position: absolute, veja a alternativa */
+    border-radius: 20px;
+}
+
+#quadrado-centralizado_segundo {
+    display: flex; /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 550px;
+    width: 750px;
+    border: 1px solid black; /* Para visualizar o container */
+    background-color: #D78A3A; /* Cor de fundo para o quadrado */ /* O posicionamento via flexbox já faz a centralização,mas se preferir usar position: absolute, veja a alternativa */
+    border-radius: 30px;
+    margin: 70px;
+}
+
+.texto_login{
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* 6. Permite sobrepor o conteúdo */
+    z-index: 1; /* 7. Garante que o conteúdo fique acima da imagem (que está implícita na camada do container-fundo) */
+}
+
+.logo {
+    position: absolute; /* Posicionar a imagem relativamente à div .cabecalho */
+    top: 10px; /* Distância do topo */
+    left: 15px; /* Distância da esquerda */
+    height: 85px; /* Altura da logo*/
+  }
+
+/* Canto superior direito */
+.logo-direita {
+    position: absolute;
+    top: 15px;
+    right: 15px; /* Distância da direita */
+    height: 50px;
+}
+
+.login_logo{
+    background-image: url("logo.png"); /* Caminho da imagem */
+    background-repeat: no-repeat; /* Para não repetir a imagem */
+}
+
+.icones {
+    display: inline-block;
+    width: 30vw;
+    /*width: 20vw;*/
+    margin-right: 20px;
+    text-align: right;
+}
+
+.icone {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+
+header a {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+header h1 {
+    color: #ffffff;
+    font-weight: 600;
+    display: inline-block;
+
+}
+
+h1{
+    text-align: center;
+}
+
+h2 {
+    color: #1e2a38;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+h3 {
+    color: #1e2a38;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.icones.reduzidos {
+    width: 18vw; /* Ou o valor que você preferir */
+}
+
+.nome, .cargo {
+    text-align: left;
+    font-size: 13px;
+}
+
+.nome-cargo {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: default;
+}
+
+.bloco-container {
+    position: relative; /* Cria um contexto de posicionamento */
+    width: 300px; /* Exemplo: A largura do seu bloco sólido */
+    height: 200px; /* Exemplo: A altura do seu bloco sólido */
+    background-color: #ccc; /* Cor sólida para o bloco */
+}
+
+.imagem_login {
+    z-index: 1; /* Garante que a imagem fique por cima de outros elementos se houver */
+    width: 140px;
+    height: 120px;
+}
+
+
+.botao {
+    border-radius: 20px; /* Faz o botão ser redondo */
+
+    background-color: #BD4223;/* Define a cor de fundo inicial */
+    color: white;/* Define a cor do texto e o tamanho */
+    font-size: 16px;
+
+    /* Permite que o texto fique no centro (opcional) */
+
+    width: 250px;/* Define o tamanho do botão */
+    height: 40px;
+
+    display: flex; /* Permite que o texto fique no centro (opcional) */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Muda o cursor do mouse para indicar que é clicável */
+
+    margin: 10px;
+}
+
+/* Muda a cor quando o botão está ativo (sendo pressionado) */
+.botao:active {
+  background-color: red;
+}
+
+.bloco-login{
+    justify-content: center;
+    align-items: center;
+}
+
+.traco_um{
+    display: flex;
+    height: 1px;
+    background-color: white;
+    width: 100%;
+}
+.traco_dois{
+    display: flex;
+    height: 1px;
+    background-color: white;
+    width: 100%;
+
+}
+
+.tracos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#ou{
+    display: block;
+    margin: 0;
+    color: #998672;
+}
+
+p{
+    color: #998672;
+}
