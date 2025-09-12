@@ -4,30 +4,16 @@
     text-align: center;
 }
 
-/* Cabeçalho */
-header {
-    background-color: #BD4223;
-    padding: 40px 0;
-    color: #DFA596;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar{
-    background: #fda980;
-}
-
-.conteiner, body{
-    background: #f1e9e5;
-
-}
-
 /* Estilos globais */
 body, html {
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5; /* Fundo mais suave e moderno */
-    color: #333333; /* Cor de texto mais neutra */
+    background-color: #f0f2f5;
+    color: #333333;
 }
+
+
+/*LOGIN*/
 
 .login {
     background-image: url("fundo_tela.jpg"); /* Caminho da imagem */
@@ -51,6 +37,7 @@ body, html {
 
 #quadrado-centralizado_segundo {
     display: flex; /* Ativa o Flexbox */
+    flex-direction: column;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
     height: 550px;
@@ -68,109 +55,46 @@ body, html {
     z-index: 1; /* 7. Garante que o conteúdo fique acima da imagem (que está implícita na camada do container-fundo) */
 }
 
-.logo {
-    position: absolute; /* Posicionar a imagem relativamente à div .cabecalho */
-    top: 10px; /* Distância do topo */
-    left: 15px; /* Distância da esquerda */
-    height: 85px; /* Altura da logo*/
-  }
-
-/* Canto superior direito */
-.logo-direita {
-    position: absolute;
-    top: 15px;
-    right: 15px; /* Distância da direita */
-    height: 50px;
+.login_bloco {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 0.75em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 5px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    margin: 5px 10px 10px 5px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    width: 500px;
 }
 
-.login_logo{
-    background-image: url("logo.png"); /* Caminho da imagem */
-    background-repeat: no-repeat; /* Para não repetir a imagem */
+.login_bloco:focus {
+    background-color: #D78A3A;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
 }
 
-.icones {
-    display: inline-block;
-    width: 30vw;
-    /*width: 20vw;*/
-    margin-right: 20px;
-    text-align: right;
+.login_bloco_2 {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 0.75em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 5px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    margin: 5px 10px 10px 5px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    width: 500px;
 }
 
-.icone {
-    display: inline-block;
-    margin-left: 20px;
+.login_bloco_2:focus {
+    background-color: #D78A3A;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
 }
 
-
-
-header a {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 16px;
-    color: white;
-    transition: background-color 0.3s;
-}
-
-header h1 {
-    color: #ffffff;
-    font-weight: 600;
-    display: inline-block;
-
-}
-
-h1{
+#placeholder{
     text-align: center;
-}
-
-h2 {
-    color: #1e2a38;
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-h3 {
-    color: #1e2a38;
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-th, td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-.icones.reduzidos {
-    width: 18vw; /* Ou o valor que você preferir */
-}
-
-.nome, .cargo {
-    text-align: left;
-    font-size: 13px;
-}
-
-.nome-cargo {
-    display: inline-block;
-    margin-left: 10px;
-    cursor: default;
 }
 
 .bloco-container {
@@ -180,32 +104,95 @@ tr:hover {
     background-color: #ccc; /* Cor sólida para o bloco */
 }
 
+.login_logo{
+    background-image: url("logo.png"); /* Caminho da imagem */
+    background-repeat: no-repeat; /* Para não repetir a imagem */
+}
+
 .imagem_login {
     z-index: 1; /* Garante que a imagem fique por cima de outros elementos se houver */
     width: 140px;
-    height: 120px;
+    height: 140px;
 }
 
+botao {
+ padding: 15px 25px;
+ border: unset;
+ border-radius: 15px;
+ color: #fff6f3;
+ z-index: 1;
+ background: #fff6f3;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+.botao::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: white;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+.botao:hover {
+ color: #9F4028;
+}
+
+.botao:hover::before {
+ width: 100%;
+}
 
 .botao {
-    border-radius: 20px; /* Faz o botão ser redondo */
-
-    background-color: #BD4223;/* Define a cor de fundo inicial */
-    color: white;/* Define a cor do texto e o tamanho */
-    font-size: 16px;
-
-    /* Permite que o texto fique no centro (opcional) */
-
-    width: 250px;/* Define o tamanho do botão */
+ padding: 10px 130px;
+ border: unset;
+ border-radius: 20px;
+ color: white;
+ z-index: 1;
+ background: #BC4123;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+    margin: 20px;
+    width: 500px;
     height: 40px;
-
-    display: flex; /* Permite que o texto fique no centro (opcional) */
-    justify-content: center;
-    align-items: center;
-    cursor: pointer; /* Muda o cursor do mouse para indicar que é clicável */
-
-    margin: 10px;
 }
+
+
+/*.botao {*/
+/*    border-radius: 20px; !* Faz o botão ser redondo *!*/
+
+/*    background-color: #BD4223;!* Define a cor de fundo inicial *!*/
+/*    color: white;!* Define a cor do texto e o tamanho *!*/
+/*    font-size: 16px;*/
+
+/*    !* Permite que o texto fique no centro (opcional) *!*/
+
+/*    width: 500px;!* Define o tamanho do botão *!*/
+/*    height: 40px;*/
+
+/*    display: flex; !* Permite que o texto fique no centro (opcional) *!*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    cursor: pointer; !* Muda o cursor do mouse para indicar que é clicável *!*/
+
+/*    margin: 25px 10px 35px 5px; !* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) *!*/
+/*}*/
 
 /* Muda a cor quando o botão está ativo (sendo pressionado) */
 .botao:active {
@@ -246,3 +233,276 @@ tr:hover {
 p{
     color: #998672;
 }
+
+h4{
+    align-items: flex-end;
+    text-align: left;
+    margin: 10px 10px 10px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+}
+
+.link{
+    color: black;
+}
+
+.imagem_login{
+    display: flex; /* Ativa o modo flexbox */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente (se necessário) */
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+/*PÁGINA INICiAL*/
+
+/* Cabeçalho */
+header {
+    background-color: #BD4223;
+    padding: 40px 0;
+    color: #DFA596;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar{
+    background: #fda980;
+}
+
+.conteiner, body{
+    background: #f1e9e5;
+
+}
+
+.cabecalho {
+    display: block;
+    align-items: flex-end;
+}
+
+.logo {
+    position: absolute; /* Posicionar a imagem relativamente à div .cabecalho */
+    top: 10px; /* Distância do topo */
+    left: 15px; /* Distância da esquerda */
+    height: 85px; /* Altura da logo*/
+  }
+
+/* Canto superior direito */
+.logo-direita {
+    position: absolute;
+    top: 15px;
+    right: 15px; /* Distância da direita */
+    height: 50px;
+}
+
+
+
+.icones {
+    display: inline-block;
+    width: 98%;
+    /*width: 20vw;*/
+    margin-right: 20px;
+    text-align: right;
+}
+
+.icone {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+
+header a {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.icones.reduzidos {
+    width: 18vw; /* Ou o valor que você preferir */
+}
+
+.nome, .cargo {
+    text-align: left;
+    font-size: 13px;
+}
+
+.nome-cargo {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: default;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+/*CADASTRO DO FUCIONÁRIO*/
+
+.cadastro{
+    justify-content: flex-end;
+
+}
+
+.cadastro_nome{
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 10px 20px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+}
+
+.nome_cadastro{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    margin: 17px;
+    width: 655px;
+}
+
+.nome_cadastro:focus {
+    background-color: #D78A3A;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+.telefone_cpf{
+    display: block;
+    justify-content: left;
+    margin: 20px 20px 10px 20px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+}
+
+.senha_cofirmacao{
+    display: block;
+    justify-content: right;
+    margin: 20px 20px 10px 20px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+}
+
+.input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    margin: 17px;
+    width: 310px;
+}
+
+.input:focus {
+    background-color: #D78A3A;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+h1{
+    align-items: center;
+    text-align: center;
+    font-family: inherit;
+}
+
+.botao_cadastro_1 {
+ padding: 15px 25px;
+ border: unset;
+ border-radius: 15px;
+ color: #fff6f3;
+ z-index: 1;
+ background: #fff6f3;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+.botao_cadastro_1::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: white;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
+}
+
+.botao_cadastro_1:hover {
+ color: #9F4028;
+}
+
+.botao_cadastro_1:hover::before {
+ width: 100%;
+}
+
+.botao_cadastro_1 {
+ padding: 10px 130px;
+ border: unset;
+ border-radius: 20px;
+ color: white;
+ z-index: 1;
+ background: #BC4123;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+    margin: 20px;
+}
+/*------------------------------*/
+.botao_cadastro_2::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: rgba(159, 64, 40, 0.85);
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+
+}
+
+.botao_cadastro_2:hover {
+ color: white;
+}
+
+.botao_cadastro_2:hover::before {
+ width: 100%;
+}
+
+
+.botao_cadastro_2 {
+ padding: 10px 130px;
+ border: unset;
+ border-radius: 20px;
+ color: #BC4123;
+ z-index: 1;
+ background: #e8e8e8;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgb(255, 246, 243);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
