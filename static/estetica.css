@@ -338,9 +338,57 @@ label {
     cursor: default;
 }
 
+.campo-senha {
+    position: relative;
+    width: 250px;
+}
+
+.campo-senha input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* espaço para o ícone */
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.icone-olho {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%); /* centraliza verticalmente */
+    cursor: pointer;
+}
+
+.icone-olho img {
+    width: 20px;
+    height: 20px;
+}
+
+.mostrar {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.mostrar img {
+    width: 20px;
+    height: 20px;
+}
+
 /*----------------------------------------------------------------------------------------------------------------------*/
 
 /*CADASTRO DO FUCIONÁRIO*/
+
+#h1{
+    text-align: center;
+    margin: 40px;
+    font-family: Georgia;
+    color: black;
+}
 
 .cadastro{
     justify-content: flex-end;
@@ -361,7 +409,7 @@ label {
     background-color: #ffffff;
     box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
     transition: 300ms ease-in-out;
-    margin: 17px;
+    margin: 15px;
     width: 655px;
 }
 
@@ -375,13 +423,13 @@ label {
 .telefone_cpf{
     display: block;
     justify-content: left;
-    margin: 20px 20px 10px 20px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 15px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
 }
 
 .senha_cofirmacao{
     display: block;
     justify-content: right;
-    margin: 20px 20px 10px 20px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 15px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
 }
 
 .input {
@@ -410,34 +458,34 @@ h1{
 }
 
 .botao_cadastro_1 {
- padding: 15px 25px;
- border: unset;
- border-radius: 15px;
- color: #fff6f3;
- z-index: 1;
- background: #fff6f3;
- position: relative;
- font-weight: 1000;
- font-size: 17px;
- -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms;
- overflow: hidden;
+    padding: 15px 15px;
+    border: unset;
+    border-radius: 15px;
+    color: #fff6f3;
+    z-index: 1;
+    background: #fff6f3;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
 }
 
 .botao_cadastro_1::before {
- content: "";
- position: absolute;
- top: 0;
- left: 0;
- height: 100%;
- width: 0;
- border-radius: 15px;
- background-color: white;
- z-index: -1;
- -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: white;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
 }
 
 .botao_cadastro_1:hover {
@@ -449,60 +497,239 @@ h1{
 }
 
 .botao_cadastro_1 {
- padding: 10px 130px;
- border: unset;
- border-radius: 20px;
- color: white;
- z-index: 1;
- background: #BC4123;
- position: relative;
- font-weight: 1000;
- font-size: 17px;
- -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms;
- overflow: hidden;
-    margin: 20px;
+    padding: 10px 128px;
+    border: unset;
+    border-radius: 20px;
+    color: white;
+    z-index: 1;
+    background: #BC4123;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 20px 20px 10px 20px;
 }
 /*------------------------------*/
 .botao_cadastro_2::before {
- content: "";
- position: absolute;
- top: 0;
- left: 0;
- height: 100%;
- width: 0;
- border-radius: 15px;
- background-color: rgba(159, 64, 40, 0.85);
- z-index: -1;
- -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: rgba(159, 64, 40, 0.85);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
 
 }
 
 .botao_cadastro_2:hover {
- color: white;
+    color: white;
 }
 
 .botao_cadastro_2:hover::before {
- width: 100%;
+    width: 100%;
 }
 
 
 .botao_cadastro_2 {
- padding: 10px 130px;
- border: unset;
- border-radius: 20px;
- color: #BC4123;
- z-index: 1;
- background: #e8e8e8;
- position: relative;
- font-weight: 1000;
- font-size: 17px;
- -webkit-box-shadow: 4px 8px 19px -3px rgb(255, 246, 243);
- box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms;
- overflow: hidden;
+    padding: 10px 128px;
+    border: unset;
+    border-radius: 20px;
+    color: #BC4123;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgb(255, 246, 243);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 20px 20px 10px 20px;
+
+}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/*CADASTRO DE PRODUTOS*/
+
+#h1{
+    text-align: center;
+    margin: 40px;
+    font-family: Georgia;
+    color: black;
+}
+
+.cadastro{
+    justify-content: flex-end;
+
+}
+
+.cadastro_nome_produto{
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 10px 20px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+}
+
+.nome_cadastro_produto{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    margin: 15px;
+    width: 655px;
+}
+
+.nome_cadastro_produto:focus {
+    background-color: #D78A3A;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+.categoria_valor_codigo{
+    display: block;
+    justify-content: left;
+    margin: 15px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+}
+
+.marca_quantidade_descricao{
+    display: block;
+    justify-content: right;
+    margin: 15px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+}
+
+
+.input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    margin: 17px;
+    width: 310px;
+}
+
+.input:focus {
+    background-color: #D78A3A;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+h1{
+    align-items: center;
+    text-align: center;
+    font-family: inherit;
+}
+
+.botao_cadastro_1 {
+    padding: 15px 15px;
+    border: unset;
+    border-radius: 15px;
+    color: #fff6f3;
+    z-index: 1;
+    background: #fff6f3;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.botao_cadastro_1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: white;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}
+
+.botao_cadastro_1:hover {
+ color: #9F4028;
+}
+
+.botao_cadastro_1:hover::before {
+ width: 100%;
+}
+
+.botao_cadastro_1 {
+    padding: 10px 128px;
+    border: unset;
+    border-radius: 20px;
+    color: white;
+    z-index: 1;
+    background: #BC4123;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 20px 20px 10px 20px;
+}
+/*------------------------------*/
+.botao_cadastro_2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: rgba(159, 64, 40, 0.85);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+
+}
+
+.botao_cadastro_2:hover {
+    color: white;
+}
+
+.botao_cadastro_2:hover::before {
+    width: 100%;
+}
+
+
+.botao_cadastro_2 {
+    padding: 10px 128px;
+    border: unset;
+    border-radius: 20px;
+    color: #BC4123;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgb(255, 246, 243);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    margin: 20px 20px 10px 20px;
+
 }
 
