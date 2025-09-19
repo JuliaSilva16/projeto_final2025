@@ -111,8 +111,8 @@ body, html {
 
 .imagem_login {
     z-index: 1; /* Garante que a imagem fique por cima de outros elementos se houver */
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 115px;
 }
 
 botao {
@@ -363,21 +363,21 @@ label {
     height: 20px;
 }
 
-.mostrar {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
+/*.mostrar {*/
+/*    position: absolute;*/
+/*    right: 10px;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%);*/
+/*    background: none;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    padding: 0;*/
+/*}*/
 
-.mostrar img {
-    width: 20px;
-    height: 20px;
-}
+/*.mostrar img {*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*}*/
 
 /*----------------------------------------------------------------------------------------------------------------------*/
 
@@ -557,7 +557,7 @@ h1{
 }
 
 /*----------------------------------------------------------------------------------------------------------------------*/
-/*CADASTRO DE PRODUTOS*/
+/*CADASTRO DE BEBIDAS/DOCES/SALGADOS*/
 
 #h1{
     text-align: center;
@@ -585,7 +585,7 @@ h1{
     background-color: #ffffff;
     box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
     transition: 300ms ease-in-out;
-    margin: 15px;
+    margin: 10px;
     width: 655px;
 }
 
@@ -599,13 +599,13 @@ h1{
 .categoria_valor_codigo{
     display: block;
     justify-content: left;
-    margin: 15px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 10px 15px 5px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
 }
 
 .marca_quantidade_descricao{
     display: block;
     justify-content: right;
-    margin: 15px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 10px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
 }
 
 
@@ -617,7 +617,7 @@ h1{
     background-color: #ffffff;
     box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
     transition: 300ms ease-in-out;
-    margin: 17px;
+    margin: 10px 15px 4px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
     width: 310px;
 }
 
@@ -687,7 +687,7 @@ h1{
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     transition: all 250ms;
     overflow: hidden;
-    margin: 20px 20px 10px 20px;
+    margin: 20px 20px 20px 20px;
 }
 /*------------------------------*/
 .botao_cadastro_2::before {
@@ -729,7 +729,147 @@ h1{
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     transition: all 250ms;
     overflow: hidden;
-    margin: 20px 20px 10px 20px;
+    margin: 20px 20px 20px 20px;
 
 }
 
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*PEDIDOS*/
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.container {
+  width: 80%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaço entre os cards */
+}
+
+h1 {
+    color: #b33616;
+    font-size: 28px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.card {
+  background-color: #db8630;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #b33616;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Menu horizontal totalmente à direita */
+.menu {
+    display: flex;
+    justify-content: flex-end; /* garante alinhamento à direita */
+    gap: 20px;
+    width: 100%; /* ocupa todo o espaço da right-area */
+    margin: 5px 15px 5px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+
+
+}
+
+.menu a {
+    color: #F5D3C4FF;          /* cor padrão */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;  /* suaviza a mudança de cor */
+}
+
+.menu a:hover {
+    color: #ffffff;           /* cor quando passar o mouse */
+    text-decoration: underline; /* opcional: sublinha ao passar o mouse */
+}
+
+.usuario_menu{
+    margin: 5px 10px 5px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+
+}
+
+.pedido {
+    width: 3000px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 90px 10px 100px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+}
+
+.pedidos {
+    display: flex; /* Alinha informações e número na horizontal */
+    justify-content: space-between; /* espaço entre os elementos */
+    align-items: center;
+    background-color: #D78A3A;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    color: white;
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 40px 10px 10px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+
+}
+
+.pedidos:hover {
+  background-color: #BD4223;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.numero-pedido {
+  background-color: #BD4223; /* cor do círculo */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* deixa redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 20px; /* espaço entre informações e o círculo */
+}
+
+.numero-pedido:hover {
+    background-color: #D78A3A; /* muda a cor ao passar o mouse */
+    +
+}
+
+.informacoes p {
+  margin: 5px 0;
+  text-align: left;
+    color: white;
+}
+
+.nome_pedido{
+    margin: 40px 10px 10px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    font-family: Georgia;
+    font-size: 32px;
+    color: #b33616;
+    margin-bottom: 20px;
+
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
