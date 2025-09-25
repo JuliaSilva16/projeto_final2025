@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Lista de pedidos</title>
+  <title>Lista de funcionarios</title>
   <link rel="stylesheet" href="/static/estetica.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
     <!-- Menu abaixo do usuário -->
     <nav class="menu">
       <a href="http://localhost:63342/projeto_finalWEb/templates/home.html?_ijt=jgkm1rkcqpnancthbkrqj2r3hq">Home</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/cadastro_alimentos.html?_ijt=dgcpuvvj08qmfprd7100v8sncf">Cadastro de alimentos</a>
+      <a href="http://localhost:63342/projeto_finalWEb/templates/cadastro_alimentos.html?_ijt=dgcpuvvj08qmfprd7100v8sncf">Cadastro de produtos</a>
       <a href="http://localhost:63342/projeto_finalWEb/templates/pedidos.html?_ijt=r239dokaeq5cue5ad7odktlcdh#">Pedidos</a>
       <a href="http://localhost:63342/projeto_finalWEb/templates/funcionarios.html?_ijt=hemcprhrtacmduqjs9ntjsck10">Funcionários</a>
       <a href="#">Status</a>
@@ -37,31 +37,21 @@
   </div>
 </header>
 
-<div class="pedido">
-  <h1 class="nome_pedido">Pedidos</h1>
-  <div class="pedidos">
-    <div class="informacoes">
-      <p><strong>Código:</strong> 12345</p>
-      <p><strong>Descrição:</strong> Produto Exemplo</p>
-      <p><strong>Valor:</strong> R$ 50,00</p>
-      <p><strong>Quantidade:</strong> 2</p>
+<div class="funcionario">
+  <h1 class="nome_funcionario">Funcionário</h1>
+  <div class="funcionarios">
+    <div class="conteudo-central">
+      <div class="numero-funcionario">1</div>
+      <div class="informacoes">
+        <p><strong>Nome:</strong> Júlia</p>
+        <p><strong>Telefone:</strong> 18 991658932</p>
+        <p><strong>CPF:</strong> 25689333964 </p>
+        <p><strong>CF:</strong> 2356</p>
+      </div>
+      <a class="botao_editar" href="http://localhost:63342/projeto_finalWEb/templates/editar_cadastro_funcionario.html?_ijt=4eievc6j18ktj0p65jbf8r3mvh">Editar</a>
     </div>
-    <div class="numero-pedido">1</div>
-  </div>
-
-  <div class="pedidos">
-    <div class="informacoes">
-      <p><strong>Código:</strong> 12346</p>
-      <p><strong>Descrição:</strong> Outro Produto</p>
-      <p><strong>Valor:</strong> R$ 75,00</p>
-      <p><strong>Quantidade:</strong> 1</p>
-    </div>
-    <div class="numero-pedido">2</div>
   </div>
 </div>
-
-
-
 
 </body>
 </html>
