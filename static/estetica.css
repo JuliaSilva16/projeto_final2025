@@ -6,10 +6,13 @@
 
 /* Estilos globais */
 body, html {
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
     background-color: #f0f2f5;
     color: #333333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
 }
 
 /*------------------------------------------------------------------------------------------------------------------------*/
@@ -51,8 +54,8 @@ body, html {
 .texto_login{
     justify-content: center;
     align-items: center;
-    position: absolute; /* 6. Permite sobrepor o conteúdo */
-    z-index: 1; /* 7. Garante que o conteúdo fique acima da imagem (que está implícita na camada do container-fundo) */
+    position: absolute; /* Permite sobrepor o conteúdo */
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem (que está implícita na camada do container-fundo) */
 }
 
 .login_bloco {
@@ -63,7 +66,7 @@ body, html {
     background-color: #ffffff;
     box-shadow: inset 2px 5px 5px rgba(0,0,0,0.3);
     transition: 300ms ease-in-out;
-    margin: 5px 10px 10px 5px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 5px 10px 10px 5px; /* 5px (topo), 10px (direita), 10px (inferior), 5px (esquerda) */
     width: 500px;
 }
 
@@ -82,7 +85,7 @@ body, html {
     background-color: #ffffff;
     box-shadow: inset 2px 5px 5px rgba(0,0,0,0.3);
     transition: 300ms ease-in-out;
-    margin: 5px 10px 10px 5px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 5px 10px 10px 5px; /* 5px (topo), 10px (direita), 10px (inferior), 5px (esquerda) */
     width: 500px;
 }
 
@@ -99,8 +102,8 @@ body, html {
 
 .bloco-container {
     position: relative; /* Cria um contexto de posicionamento */
-    width: 300px; /* Exemplo: A largura do seu bloco sólido */
-    height: 200px; /* Exemplo: A altura do seu bloco sólido */
+    width: 300px; /*largura do bloco sólido */
+    height: 200px; /*  altura do bloco sólido */
     background-color: #ccc; /* Cor sólida para o bloco */
 }
 
@@ -203,7 +206,7 @@ p{
 h4{
     align-items: flex-end;
     text-align: left;
-    margin: 10px 10px 10px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 10px 10px 10px 10px; /* 10px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
 }
 
 .botao_login{
@@ -259,12 +262,9 @@ header {
     height: 50px;
 }
 
-
-
 .icones {
     display: inline-block;
     width: 98%;
-    /*width: 20vw;*/
     margin-right: 20px;
     text-align: right;
 }
@@ -291,7 +291,7 @@ label {
 }
 
 .icones.reduzidos {
-    width: 18vw; /* Ou o valor que você preferir */
+    width: 18vw;
 }
 
 .nome, .cargo {
@@ -317,34 +317,8 @@ label {
     box-sizing: border-box;
 }
 
-.icone-olho {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%); /* centraliza verticalmente */
-    cursor: pointer;
-}
 
-.icone-olho img {
-    width: 20px;
-    height: 20px;
-}
 
-/*.mostrar {*/
-/*    position: absolute;*/
-/*    right: 10px;*/
-/*    top: 50%;*/
-/*    transform: translateY(-50%);*/
-/*    background: none;*/
-/*    border: none;*/
-/*    cursor: pointer;*/
-/*    padding: 0;*/
-/*}*/
-
-/*.mostrar img {*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*}*/
 
 /*----------------------------------------------------------------------------------------------------------------------*/
 
@@ -365,7 +339,7 @@ label {
 .cadastro_nome{
     display: flex;
     justify-content: center;
-    margin: 20px 20px 10px 20px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 20px 20px 10px 20px; /* 20px (topo), 20px (direita), 10px (inferior), 20px (esquerda) */
 }
 
 .nome_cadastro{
@@ -390,13 +364,13 @@ label {
 .telefone_cpf{
     display: block;
     justify-content: left;
-    margin: 15px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 15px 15px 10px 15px; /* 15px (topo), 15px (direita), 10px (inferior), 15px (esquerda) */
 }
 
 .senha_cofirmacao{
     display: block;
     justify-content: right;
-    margin: 15px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 15px 15px 10px 15px; /* 15px (topo), 15px (direita), 10px (inferior), 15px (esquerda) */
 }
 
 .input {
@@ -541,7 +515,7 @@ h1{
 .cadastro_nome_produto{
     display: flex;
     justify-content: center;
-    margin: 20px 20px 10px 20px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 20px 20px 10px 20px; /* 20px (topo), 20px (direita), 10px (inferior), 20px (esquerda) */
 }
 
 .nome_cadastro_produto{
@@ -566,13 +540,13 @@ h1{
 .categoria_valor_codigo{
     display: block;
     justify-content: left;
-    margin: 10px 15px 5px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 10px 15px 5px 15px; /* 10px (topo), 15px (direita), 5px (inferior), 15px (esquerda) */
 }
 
 .marca_quantidade_descricao{
     display: block;
     justify-content: right;
-    margin: 10px 15px 10px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 10px 15px 10px 15px; /* 10px (topo), 15px (direita), 10px (inferior), 15px (esquerda) */
 }
 
 
@@ -584,7 +558,7 @@ h1{
     background-color: #ffffff;
     box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
     transition: 300ms ease-in-out;
-    margin: 10px 15px 4px 15px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 10px 15px 4px 15px; /* 10px (topo), 15px (direita), 4px (inferior), 15px (esquerda) */
     width: 310px;
 }
 
@@ -703,13 +677,6 @@ h1{
 /*-----------------------------------------------------------------------------------------------------------------------*/
 /*PEDIDOS*/
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-}
-
 .container {
   width: 80%;
   margin: 40px auto;
@@ -749,13 +716,13 @@ body {
     justify-content: flex-end; /* garante alinhamento à direita */
     gap: 20px;
     width: 100%; /* ocupa todo o espaço da right-area */
-    margin: 5px 15px 5px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 5px 15px 5px 10px; /* 5px (topo), 15px (direita), 5px (inferior), 10px (esquerda) */
 
 
 }
 
 .menu a {
-    color: #F5D3C4FF;          /* cor padrão */
+    color: #F5D3C4FF;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;  /* suaviza a mudança de cor */
@@ -763,11 +730,11 @@ body {
 
 .menu a:hover {
     color: #ffffff;           /* cor quando passar o mouse */
-    text-decoration: underline; /* opcional: sublinha ao passar o mouse */
+    text-decoration: underline; /* sublinha ao passar o mouse */
 }
 
 .usuario_menu{
-    margin: 5px 10px 5px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 5px 10px 5px 10px; /* 5px (topo), 10px (direita), 5px (inferior), 10px (esquerda) */
 
 }
 
@@ -776,7 +743,7 @@ body {
     max-width: 90%;
     display: flex;
     flex-direction: column;
-    margin: 10px 90px 10px 100px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 10px 90px 10px 100px; /* 10px (topo), 90px (direita), 10px (inferior), 100px (esquerda) */
 }
 
 .pedidos {
@@ -789,7 +756,7 @@ body {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     color: white;
     transition: transform 0.3s, background-color 0.3s;
-    margin: 40px 10px 10px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 40px 10px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
 
 }
 
@@ -809,7 +776,7 @@ body {
     justify-content: center;
     font-weight: bold;
     font-size: 18px;
-    margin: 40px 40px 40px 40px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 40px 40px 40px 40px; /* 40px (topo), 40px (direita), 40px (inferior), 40px (esquerda) */
 
 }
 
@@ -825,7 +792,7 @@ body {
 }
 
 .nome_pedido{
-    margin: 40px 10px 10px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+    margin: 40px 10px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
     font-family: Georgia;
     font-size: 32px;
     color: #b33616;
@@ -838,20 +805,6 @@ body {
 /*FUNCIONARIOS*/
 
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-}
-
-.container {
-  width: 80%;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Espaço entre os cards */
-}
 
 h1 {
     color: #b33616;
@@ -860,102 +813,35 @@ h1 {
     text-align: left;
 }
 
-.card {
-  background-color: #db8630;
-  border-radius: 20px;
-  padding: 20px;
-  position: relative;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #b33616;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 30px;
-    font-weight: bold;
-}
-
-
-.menu a:hover {
-    text-decoration: underline;
-}
-
-/* Menu horizontal totalmente à direita */
-.menu {
-    display: flex;
-    justify-content: flex-end; /* garante alinhamento à direita */
-    gap: 20px;
-    width: 100%; /* ocupa todo o espaço da right-area */
-    margin: 5px 15px 5px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
-
-}
-
-.menu a {
-    color: #F5D3C4FF;          /* cor padrão */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;  /* suaviza a mudança de cor */
-}
-
-.menu a:hover {
-    color: #ffffff;           /* cor quando passar o mouse */
-    text-decoration: underline; /* opcional: sublinha ao passar o mouse */
-}
-
-.usuario_menu{
-    margin: 5px 10px 5px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
-
-}
-
-.funcionario {
-    width: 3000px;
-    max-width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin: 10px 90px 10px 100px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
-}
-
-.funcionarios {
-    display: flex; /* Alinha informações e número na horizontal */
-    justify-content: space-between; /* espaço entre os elementos */
-    align-items: center;
-    background-color: #D78A3A;
-    padding: 20px 25px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    color: white;
-    transition: transform 0.3s, background-color 0.3s;
-    margin: 40px 10px 10px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
-    position: relative;     /* necessário para o botão absoluto */
-}
-
-
-
-.funcionarios:hover {
-  background-color: #BD4223;
-  transform: translateY(-5px);
-  cursor: pointer;
-
-}.nome_funcionario{
-    margin: 40px 10px 10px 10px; /* 5px (topo), 10px (direita), 15px (inferior), 20px (esquerda) */
+.nome_funcionario{
+    margin: 40px 10px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
     font-family: Georgia;
     font-size: 32px;
     color: #b33616;
     margin-bottom: 20px;
 }
 
-.informacoes p {
-  margin: 5px 0;
-  text-align: left;
+.funcionarios {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #D78A3A;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     color: white;
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 40px 10px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
+    gap: 20px;
 }
 
+.funcionarios:hover {
+  background-color: #BD4223;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
 
+/* Número do funcionário */
 .numero-funcionario {
   font-size: 20px;
   font-weight: bold;
@@ -966,29 +852,128 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
-  margin-bottom: 15px;    /* espaço entre número e informações */
+  border-radius: 5px;
+  flex-shrink: 0;
 }
 
-.numero-funcionario:hover {
-    background-color: #D78A3A; /* muda a cor ao passar o mouse */
+/* Informações ao lado do número */
+.informacoes_funcionario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  color: white;
+  flex: 1; /* Faz ocupar o espaço entre número e botão */
+    margin-left: 20px; /* Ajuste se quiser espaço da borda esquerda */
 }
 
-.botao_editar {
-  display: inline-block;
-  background-color: #BD4223;
-  color: white;              /* texto branco */
-  text-decoration: none;     /* sem underline */
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  position: absolute;        /* para posicionar no canto direito do card */
-  right: 20px;
-  bottom: 20px;
-  transition: background-color 0.3s;
+/* Parágrafos das infos */
+.informacoes_funcionario p {
+  margin: 5px 0;
+  color: white;
 }
 
-.botao_editar:hover {
+/* Botão editar no canto direito */
+.botao_editar_funcionario {
+    display: inline-block;
+    background-color: #BD4223;
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    height: fit-content;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+    /*margin-left: auto; !* empurra o botão para o final da linha *!*/
+    margin: 40px 60px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
+
+}
+
+.botao_editar_funcionario:hover {
   background-color: #D78A3A;
+
+}
+
+.funcionario {
+    width: 3000px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 90px 10px 100px; /* 10px (topo), 90px (direita), 10px (inferior), 100px (esquerda) */
+
+}
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
+/*STATUS*/
+
+/* Container dos cards */
+.cards-container {
+  display: flex;               /* deixa os cards lado a lado */
+  justify-content: center;     /* centraliza horizontalmente */
+  gap: 40px;                   /* espaço entre os cards */
+  flex-wrap: wrap;             /* empilha no mobile */
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+/* Card padrão */
+.card-status {
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 10px 90px 10px 100px; /* 10px (topo), 90px (direita), 10px (inferior), 100px (esquerda) */
+
+}
+
+/* Título do card */
+.card-status h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Blocos internos com nome/pedido */
+.bloco-info {
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+
+/* Cores dos cards */
+.preparando {
+    background-color: #D78A3A;      /* laranja/bronze */
+    border: 2px solid #B5722F;
+}
+
+.recolher {
+    background-color: #D78A3A;      /* laranja/bronze */
+    border: 2px solid #B5722F;
+}
+
+.status{
+    width: 3000px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;/
+}
+
+.nome_status{
+    margin: 40px 10px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
+    font-family: Georgia;
+    font-size: 32px;
+    color: #b33616;
+    margin-bottom: 20px;
 }
