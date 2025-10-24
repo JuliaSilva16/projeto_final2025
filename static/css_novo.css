@@ -1,0 +1,212 @@
+/*==================================
+  1. RESET E ESTILOS GLOBAIS DE BASE
+====================================*/
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+p {
+    color: #4b2416; /* Marrom Escuro para texto auxiliar */
+}
+
+/*==================================
+  2. LAYOUT PRINCIPAL (Fundo e Centralização)
+====================================*/
+
+.tela-login {
+    background-image: url("imagens/fundo_tela.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*==================================
+  3. ESTRUTURA DOS QUADRADOS (Moldura Compacta)
+====================================*/
+
+/* Quadrado Marrom (1º - Borda Externa) */
+.container-borda {
+    /* Dimensões reduzidas: 650x550 */
+    width: 900px;
+    height: 600px;
+    background-color: #9F4028; /* Marrom Escuro */
+    border-radius: 20px;
+
+    display: flex; /* Centraliza o container-conteudo */
+    justify-content: center;
+    align-items: center;
+    margin: 20px; /* Margem de segurança da tela */
+}
+
+/* Quadrado Laranja (2º - Fundo Interno) */
+.container-conteudo {
+    /* Dimensões reduzidas: 500x400 */
+    width: 800px;
+    height: 500px;
+    background-color: #D78A3A; /* Laranja/Bronze */
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px; /* Padding interno adaptado */
+}
+
+
+/*==================================
+  4. COMPONENTES DO FORMULÁRIO
+====================================*/
+
+/* Logo */
+.logo-form {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.form-login {
+    /* Limitando a largura do form para que os inputs fiquem mais estreitos */
+    width: 100%;
+    max-width: 400px;
+    margin:0px;
+}
+
+/* Labels e Inputs */
+.label {
+    display: block;
+    text-align: left;
+    color: #4b2416;
+    font-size: 16px;
+    /*margin-bottom: 0px; !* AJUSTE: Era 5px, agora é 0px. *!*/
+    width: 100%;
+    margin: 1px;
+}
+
+.input-login {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 0.75em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 5px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Adapta à largura do .form-login (400px) */
+    font-size: 16px;
+    transition: 300ms ease-in-out;
+
+    margin-bottom: 10px; /* AJUSTE: Era 25px, agora é 10px. */
+}
+
+/* Efeito de Foco (Neumorfismo) */
+.input-login:focus {
+    background-color: #D78A3A;
+    transform: scale(1.02);
+    box-shadow: 13px 13px 100px #969696,
+                -13px -13px 100px #ffffff;
+}
+
+/* Botão "Entrar" */
+.button-login {
+    padding: 10px 130px;
+    border: unset;
+    border-radius: 20px;
+    color: white;
+    z-index: 1;
+    background: #BC4123; /* Marrom-avermelhado */
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    margin-top: 10px;
+    width: 100%; /* Adapta à largura do .form-login (400px) */
+    height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Efeito Hover do Botão */
+.button-login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: white;
+    z-index: -1;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}
+
+.button-login:hover::before {
+    width: 100%;
+}
+
+.button-login:hover {
+    color: #9F4028; /* Marrom Escuro no texto */
+}
+
+/* Separador 'ou' */
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 25px 0;
+    color: #4b2416;
+    font-weight: bold;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #4b2416;
+    opacity: 0.5;
+}
+.separator:not(:empty)::before {
+    margin-right: .5em;
+}
+.separator:not(:empty)::after {
+    margin-left: .5em;
+}
+
+
+/* Link de Cadastro/Texto auxiliar */
+.subtitulo-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.subtitulo-form p {
+    margin: 0;
+    color: #4b2416;
+}
+
+.button-cadastro {
+    color: #4b2416;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.button-cadastro:hover {
+    color: #9F4028;
+}
+

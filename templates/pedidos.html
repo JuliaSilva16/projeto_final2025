@@ -10,15 +10,28 @@
 <header>
   <!-- Logo à esquerda -->
   <div class="conteiner">
-        <div  class="logo" style="cursor: pointer;"><a href=""><img class="imagem_login" src='/static/logo.png'></a></div>
+        <div  class="logo" style="cursor: pointer;"><a href="/static/logo.png"><img class="imagem_login" src='/static/logo.png'></a></div>
   </div>
-  <!-- Área direita: usuário + menu -->
+
+    <!-- Área direita: usuário + menu -->
   <div class="usuario_menu">
     <!-- Usuário -->
     <div class="icones">
-      <div class="icone">
-          <img src="/static/perfil.png" alt="" style="width: 25px; height: 25px;">
+
+      <div class="icone_mais" id="botao_mais">
+          <img src="/static/mais.png" alt="" style="width: 25px; height: 25px;">
       </div>
+      <div class="icone" id="icone-perfil">
+        <img src="/static/perfil.png" alt="" style="width: 25px; height: 25px; cursor: pointer;">
+      </div>
+
+      <!-- MENU QUE APARECE AO CLICAR -->
+      <div class="menu-perfil" id="menu-perfil">
+      <a href="#">👤 Ver perfil</a>
+      <a href="#">✏️ Editar perfil</a>
+      <a href="#">🚪 Sair</a>
+      </div>
+
       <div class="nome-cargo">
         <p class="nome">GAJUMA</p>
         <p class="cargo">Admin</p>
@@ -28,14 +41,20 @@
     <!-- Menu abaixo do usuário -->
     <nav class="menu">
       <a href="http://localhost:63342/projeto_finalWEb/templates/home.html?_ijt=jgkm1rkcqpnancthbkrqj2r3hq">Home</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/cadastro_alimentos.html?_ijt=dgcpuvvj08qmfprd7100v8sncf">Cadastro de alimentos</a>
+      <a href="http://localhost:63342/projeto_finalWEb/templates/alimentos.html?_ijt=4indtctctq9fdftqvuh1hs3go2">Alimentos</a>
       <a href="http://localhost:63342/projeto_finalWEb/templates/pedidos.html?_ijt=r239dokaeq5cue5ad7odktlcdh#">Pedidos</a>
       <a href="http://localhost:63342/projeto_finalWEb/templates/funcionarios.html?_ijt=hemcprhrtacmduqjs9ntjsck10">Funcionários</a>
       <a href="http://localhost:63342/projeto_finalWEb/templates/status.html?_ijt=kfgvpbhdevnl896it7ut617g4g">Status</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/total_pedidos.html?_ijt=j7a8h1bv29t2r2a9cmirfpsvte">Total de pedidos</a>
     </nav>
   </div>
 </header>
+
+<!-- Painel de cadastro -->
+<div class="painel-cadastro" id="painel-cadastro">
+  <a href="http://localhost:63342/projeto_finalWEb/templates/cadastro_funcionario.html?_ijt=pmfmm49jgqui8kvmh9s85hgoq3">Cadastrar funcionário</a>
+  <a href="http://localhost:63342/projeto_finalWEb/templates/cadastro_alimentos.html?_ijt=pmfmm49jgqui8kvmh9s85hgoq3">Cadastrar Alimento</a>
+</div>
+
 
 <div class="pedido">
   <h1 class="nome_pedido">Pedidos</h1>
@@ -61,7 +80,24 @@
 </div>
 
 
+<script>
+  const iconePerfil = document.getElementById("icone-perfil");
+  const menuPerfil = document.getElementById("menu-perfil");
 
+  iconePerfil.addEventListener("click", () => {
+    menuPerfil.style.display =
+      menuPerfil.style.display === "block" ? "none" : "block";
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!iconePerfil.contains(event.target) && !menuPerfil.contains(event.target)) {
+      menuPerfil.style.display = "none";
+    }
+  });
+</script>
+
+
+<script src="main.js"></script>
 
 </body>
 </html>

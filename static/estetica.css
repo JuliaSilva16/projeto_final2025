@@ -12,7 +12,6 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-
 }
 
 /*------------------------------------------------------------------------------------------------------------------------*/
@@ -120,22 +119,22 @@ body, html {
 
 
 .botao::before {
- content: "";
- position: absolute;
- top: 0;
- left: 0;
- height: 100%;
- width: 0;
- border-radius: 15px;
- background-color: white;
- z-index: -1;
- -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: white;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
 }
 
 .botao:hover::before {
- width: 100%;
+    width: 100%;
 }
 
 .botao {
@@ -160,12 +159,12 @@ body, html {
 }
 
 .botao:hover {
- color: #9F4028;
+    color: #9F4028;
 }
 
 /* Muda a cor quando o botão está ativo (sendo pressionado) */
 .botao:active {
-  background-color: red;
+    background-color: red;
 }
 
 .bloco-login{
@@ -173,30 +172,24 @@ body, html {
     align-items: center;
 }
 
-.traco_um{
-    display: flex;
-    height: 1px;
-    background-color: white;
-    width: 100%;
-}
-.traco_dois{
-    display: flex;
-    height: 1px;
-    background-color: white;
-    width: 100%;
-
+.tracos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
 }
 
-.tracos{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+.traco_um, .traco_dois {
+  flex: 1;
+  height: 1px;
+  background-color: white; /* cor do traço */
 }
 
-#ou{
-    display: block;
-    margin: 0;
-    color: #998672;
+#ou {
+  margin: 0 10px;
+  color: #998672; /* cor do texto "ou" */
+  font-weight: bold;
 }
 
 p{
@@ -225,12 +218,23 @@ h4{
 
 /*PÁGINA INICiAL*/
 
-/* Cabeçalho */
+.nome_home{
+    margin: 40px 10px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
+    font-family: Georgia;
+    font-size: 32px;
+    color: #b33616;
+    margin-bottom: 20px;
+}
+
 header {
     background-color: #BD4223;
-    padding: 40px 0;
-    color: #DFA596;
+    color: white;
+    display: flex;
+    height: 150px;
+    justify-content: space-between; /* separa logo e usuário/menu */
+    align-items: center; /* centraliza verticalmente */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .navbar{
@@ -261,12 +265,15 @@ header {
     right: 15px; /* Distância da direita */
     height: 50px;
 }
-
+/*-----------------------------------------------------------*/
 .icones {
-    display: inline-block;
+    display: flex;
     width: 98%;
-    margin-right: 20px;
+    margin-right: 5px;
     text-align: right;
+    gap: 5px;
+    position: relative; /* Para posicionar o painel suspenso */
+
 }
 
 .icone {
@@ -274,15 +281,14 @@ header {
     margin-left: 20px;
 }
 
-
-
-header a {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 16px;
-    color: white;
-    transition: background-color 0.3s;
+.fundo{
+    background-color: #FFF5E1;
+    display: flex; /* Habilita o flexbox no body para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
 }
+
 
 label {
     display: block;
@@ -305,19 +311,114 @@ label {
     cursor: default;
 }
 
-.campo-senha {
-    position: relative;
-    width: 250px;
+/*.campo-senha {*/
+/*    position: relative;*/
+/*    width: 250px;*/
+/*}*/
+
+/*.campo-senha input {*/
+/*    width: 100%;*/
+/*    padding: 10px 40px 10px 10px; !* espaço para o ícone *!*/
+/*    font-size: 16px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+/**/
+/*PARTE DE BAIXO DA HOME */
+painel-cadastro {
+  display: none;
+  position: absolute;
+  top: 35px; /* logo abaixo do ícone */
+  right: 0; /* alinhado à direita do ícone */
+  background-color: #BD4223;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 1000;
+  padding: 10px;
 }
 
-.campo-senha input {
-    width: 100%;
-    padding: 10px 40px 10px 10px; /* espaço para o ícone */
-    font-size: 16px;
-    box-sizing: border-box;
+.painel-cadastro a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+}
+
+.painel-cadastro a:hover {
+  background-color: #D78A3A;
+  border-radius: 5px;
+}
+
+/* Menu horizontal do usuário */
+.menu a {
+  color: #F5D3C4;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Painel flutuante de cadastro */
+.painel-cadastro {
+  position: absolute;
+  top: 60px; /* ajusta conforme a altura do header */
+  right: 100px; /* ajusta para ficar próximo ao ícone + */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: none; /* inicia escondido */
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.painel-cadastro a {
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.painel-cadastro a:hover {
+  background-color: #D78A3A;
+  color: white;
+  border-radius: 5px;
 }
 
 
+.menu-perfil {
+  display: none;
+  position: absolute;
+  top: 70px;      /* Ajuste para aparecer logo abaixo do ícone */
+  right: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  min-width: 160px;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.menu-perfil a {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.menu-perfil a:hover {
+  background-color: #D78A3A;
+  color: white;
+}
 
 
 /*----------------------------------------------------------------------------------------------------------------------*/
@@ -339,7 +440,7 @@ label {
 .cadastro_nome{
     display: flex;
     justify-content: center;
-    margin: 20px 20px 10px 20px; /* 20px (topo), 20px (direita), 10px (inferior), 20px (esquerda) */
+    margin: 30px 20px 10px 20px; /* 25px (topo), 20px (direita), 10px (inferior), 20px (esquerda) */
 }
 
 .nome_cadastro{
@@ -352,6 +453,7 @@ label {
     transition: 300ms ease-in-out;
     margin: 15px;
     width: 655px;
+    height: 50px;
 }
 
 .nome_cadastro:focus {
@@ -361,16 +463,57 @@ label {
              -13px -13px 100px #ffffff;
 }
 
-.telefone_cpf{
-    display: block;
-    justify-content: left;
+.email_papel {
+    display: flex;            /* deixa os inputs lado a lado */
+    justify-content: center;  /* centraliza horizontalmente */
+    gap: 30px;                /* espaço entre os inputs */
     margin: 15px 15px 10px 15px; /* 15px (topo), 15px (direita), 10px (inferior), 15px (esquerda) */
+
 }
 
-.senha_cofirmacao{
-    display: block;
-    justify-content: right;
-    margin: 15px 15px 10px 15px; /* 15px (topo), 15px (direita), 10px (inferior), 15px (esquerda) */
+.email, .papel {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    width: 310px;             /* largura individual dos inputs */
+    height:50px;
+}
+
+.email:focus , .papel:focus {
+    background-color: #D78A3A;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+                -13px -13px 100px #ffffff;
+}
+
+.senha_cofirmacao {
+    display: flex;            /* deixa os inputs lado a lado */
+    justify-content: center;  /* centraliza horizontalmente */
+    gap: 30px;                /* espaço entre os inputs */
+    margin: 25px 15px 30px 15px; /* 25px (topo), 15px (direita), 10px (inferior), 15px (esquerda) */
+}
+
+.senha, .confirmacao {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ffffff;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    width: 310px;/* largura individual dos inputs */
+    height: 50px;
+}
+
+.senha:focus, .confirmacao:focus {
+    background-color: #D78A3A;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+                -13px -13px 100px #ffffff;
 }
 
 .input {
@@ -383,6 +526,7 @@ label {
     transition: 300ms ease-in-out;
     margin: 17px;
     width: 310px;
+
 }
 
 .input:focus {
@@ -393,10 +537,12 @@ label {
 }
 
 h1{
-    align-items: center;
-    text-align: center;
-    font-family: inherit;
+    font-size: 40px; /* Aumenta o tamanho da letra */
+    font-weight: bold; /* Deixa o texto mais destacado */
+    color: #b33616; /* Mantém a cor desejada */
+    text-align: center; /* centraliza o título */
 }
+
 
 .botao_cadastro_1 {
     padding: 15px 15px;
@@ -575,7 +721,7 @@ h1{
     font-family: inherit;
 }
 
-.botao_cadastro_1 {
+.botao_cadastro {
     padding: 15px 15px;
     border: unset;
     border-radius: 15px;
@@ -673,6 +819,106 @@ h1{
     margin: 20px 20px 20px 20px;
 
 }
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*ALIMENTO*/
+
+h1 {
+    color: #b33616;
+    font-size: 28px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.nome_alimento{
+    margin: 40px 10px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
+    font-family: Georgia;
+    font-size: 32px;
+    color: #b33616;
+    margin-bottom: 20px;
+}
+
+.alimentos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #D78A3A;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 40px 10px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
+    gap: 20px;
+}
+
+.alimentos:hover {
+  background-color: #BD4223;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+/* Número do funcionário */
+.numero_alimento {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #BD4223;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+/* Informações ao lado do número */
+.informacoes_alimento {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  color: white;
+  flex: 1; /* Faz ocupar o espaço entre número e botão */
+    margin-left: 20px; /* Ajuste se quiser espaço da borda esquerda */
+}
+
+/* Parágrafos das infos */
+.informacoes_alimento p {
+  margin: 5px 0;
+  color: white;
+}
+
+/* Botão editar no canto direito */
+.botao_editar_alimento {
+    display: inline-block;
+    background-color: #BD4223;
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    height: fit-content;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+    /*margin-left: auto; !* empurra o botão para o final da linha *!*/
+    margin: 40px 60px 10px 10px; /* 40px (topo), 10px (direita), 10px (inferior), 10px (esquerda) */
+
+}
+
+.botao_editar_alimento:hover {
+  background-color: #D78A3A;
+
+}
+
+.alimento {
+    width: 3000px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 90px 10px 100px; /* 10px (topo), 90px (direita), 10px (inferior), 100px (esquerda) */
+
+}
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 /*PEDIDOS*/
@@ -705,17 +951,12 @@ h1{
     font-weight: bold;
 }
 
-
-.menu a:hover {
-    text-decoration: underline;
-}
-
 /* Menu horizontal totalmente à direita */
 .menu {
     display: flex;
     justify-content: flex-end; /* garante alinhamento à direita */
-    gap: 20px;
     width: 100%; /* ocupa todo o espaço da right-area */
+    height: 100%;
     margin: 5px 15px 5px 10px; /* 5px (topo), 15px (direita), 5px (inferior), 10px (esquerda) */
 
 
@@ -803,8 +1044,6 @@ h1{
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
 /*FUNCIONARIOS*/
-
-
 
 h1 {
     color: #b33616;
@@ -905,12 +1144,6 @@ h1 {
 }
 
 
-
-
-
-
-
-
 /*----------------------------------------------------------------------------------------------------------------------------*/
 /*STATUS*/
 
@@ -976,4 +1209,63 @@ h1 {
     font-size: 32px;
     color: #b33616;
     margin-bottom: 20px;
+}
+
+
+/*#mensagem-topo {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    padding: 15px;*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*    display: none;*/
+/*    z-index: 9999;*/
+/*}*/
+
+/*#mensagem-topo.success { background-color: #4CAF50; color: white; }*/
+/*#mensagem-topo.error   { background-color: #f44336; color: white; }*/
+/*#mensagem-topo.info    { background-color: #2196F3; color: white; }*/
+
+/* ==== MENSAGEM NO TOPO ==== */
+#mensagem-topo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    padding: 12px;
+    z-index: 9999;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Cores para os tipos de mensagem */
+#mensagem-topo.info {
+    background-color: #0d6efd; /* azul */
+}
+
+#mensagem-topo.success {
+    background-color: #198754; /* verde */
+}
+
+#mensagem-topo.error {
+    background-color: #dc3545; /* vermelho */
+}
+
+
+.voltar-link {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #D78A3A;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.voltar-link:hover {
+    color: #b05e2a;
+    text-decoration: underline;
 }

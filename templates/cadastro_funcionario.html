@@ -1,48 +1,41 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <title>Cadastro de funcionário</title>
-    <link rel="stylesheet" href="../static/estetica.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
+{% extends 'template.html' %}
 
-<body>
-
-<div class="login">
-
-    <div id="quadrado-centralizado">
-        <div id="quadrado-centralizado_segundo">
-            <h1><strong>👤 Cadastro de funcionário 👤</strong></h1>
-
-            <div class="cadastro">
-
-                <div class="cadastro_nome">
-                    <input type="text" autocomplete="off" name="text" class="nome_cadastro" placeholder="Nome do funcionário">
-                    <i class=""></i>
-                </div>
-
-                <div class="telefone_cpf ">
-                    <input type="text" autocomplete="off" name="text" class="input" placeholder="Telefone">
-                    <input type="text" autocomplete="off" name="text" class="input" placeholder="CPF">
-                </div>
-
-                <div class="senha_cofirmacao">
-                    <input type="text" autocomplete="off" name="text" class="input" placeholder="Senha">
-                    <input type="text" autocomplete="off" name="text" class="input" placeholder="Confiarmação da senha">
-                </div>
-
-                <div>
-                    <button type="button" class="botao_cadastro_1 ">Salvar</button>
-                    <button type="button" class="botao_cadastro_2">Excluir</button>
-                </div>
-
-            </div>
-
+{%block conteudo %}
+<div class="tela-login">
+    <div class="d-flex flex-column">
+        <form id="postForm" class="form-login" method="POST" action="{{ url_for('usuario_cadastro')}}">
+            <label class="label">
+                Nome:
+                <br>
+                <input type="text" class="input-login" name="nome">
+            </label>
+            <br>
+            <label class="label">
+                Email:
+                <br>
+                <input type="email" class="input-login" name="email">
+            </label><label class="label">
+                Senha:
+                <br>
+                <input type="password" class="input-login" name="senha">
+            </label><label class="label">
+                Confirmação da Senha:
+                <br>
+                <input type="password" class="input-login" name="senha">
+            </label>
+            <br>
+            <label class="label">
+                Papel:
+                <br>
+                <input type="text" class="input-login" name="papel">
+            </label>
+            <br>
+            <button type="submit" class="button-login">Enviar</button>
+        </form>
+        <div class="d-flex flex-row subtitulo-form">
+            <p>Não tem uma conta?</p>
+            <a href="{{ url_for('usuario_cadastro')}}" class="button-cadastro">Cadastre-se</a>
         </div>
     </div>
 </div>
-
-</body>
-</html>
+{% endblock %}

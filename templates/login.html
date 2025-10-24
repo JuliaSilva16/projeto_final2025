@@ -1,46 +1,42 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="../static/estetica.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AROMA E SABOR</title>
+    <link rel="stylesheet" href="/static/css_novo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-
 <body>
-<div class="login">
-    <div id="quadrado-centralizado">
-        <div id="quadrado-centralizado_segundo">
+<div class="tela-login">
+    <div class="container-borda">
+        <div class="container-conteudo">
 
-            <div class="container d-flex flex-column justify-content-center align-items-center">
-                <img src="/static/logo.png" alt="Descrição da imagem" class="imagem_login">
+            <img src="/static/imagens/logo.png" alt="Logo da lanchonete" class="logo-form">
+            <form id="postForm" class="form-login" method="POST">
+                <label class="label">
+                    Email:
+                    <br>
+                    <input type="email" class="input-login" name="email" placeholder="Insira seu email">
+                </label>
+                <br>
+                <label class="label">
+                    Senha:
+                    <br>
+                    <input type="password" class="input-login" name="senha"  placeholder="Insira sua senha">
+                </label>
+                <br>
+                <button type="submit" class="button-login">Entrar</button>
 
-                <div class="bloco-login d-flex flex-column">
-                    <div class="mb-1 col-4 align-center w-100">
-                        <h4>Funcionário</h4>
-                        <input type="text" autocomplete="on" name="text" class="login_bloco" placeholder="Insira seu CPF ">
-                    </div>
+                <div class="separator">ou</div>
+            </form>
 
-                    <div class="mb-1 col-4 w-100">
-                        <h4>Senha</h4>
-                        <input type="password" autocomplete="on" name="text" class="login_bloco_2" placeholder="Insira sua senha">
-                    </div>
-                    <a class="botao" href="http://localhost:63342/projeto_finalWEb/templates/base.html?_ijt=6dffribsfa4lmvpnmmn0mvhvi0">Entrar</a>
-                <div class="tracos">
-                    <div class=" traco_um" ></div>
-                    <strong id="ou">ou</strong>
-                    <div class=" traco_dois" ></div>
-                </div>
-                    <p></p>
-                <p>Ainda não possui uma conta?<a class="botao_login" href="http://localhost:63342/projeto_finalWEb/templates/cadastro_funcionario.html?_ijt=ibvi4nrkqroalc3r5boft07dp3">Crie aqui!</a></p>
-
-                </div>
+            <div class="d-flex flex-row subtitulo-form">
+                <p>Ainda não possui uma conta?</p>
+                <a href="{{ url_for('usuario_cadastro')}}" class="button-cadastro">Crie aqui</a>
             </div>
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

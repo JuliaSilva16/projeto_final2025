@@ -1,113 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Lista de funcionarios</title>
-  <link rel="stylesheet" href="/static/estetica.css">
-</head>
-<body>
+{% extends 'template.html' %}
 
-<header>
-  <!-- Logo à esquerda -->
-  <div class="conteiner">
-        <div  class="logo" style="cursor: pointer;"><a href=""><img class="imagem_login" src='/static/logo.png'></a></div>
-  </div>
-  <!-- Área direita: usuário + menu -->
-  <div class="usuario_menu">
-    <!-- Usuário -->
-    <div class="icones">
-      <div class="icone">
-          <img src="/static/perfil.png" alt="" style="width: 25px; height: 25px;">
-      </div>
-      <div class="nome-cargo">
-        <p class="nome">GAJUMA</p>
-        <p class="cargo">Admin</p>
-      </div>
-    </div>
+{% block title %}Lista Funcionários{% endblock %}
 
-    <!-- Menu abaixo do usuário -->
-    <nav class="menu">
-      <a href="http://localhost:63342/projeto_finalWEb/templates/home.html?_ijt=jgkm1rkcqpnancthbkrqj2r3hq">Home</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/cadastro_alimentos.html?_ijt=dgcpuvvj08qmfprd7100v8sncf">Cadastro de produtos</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/pedidos.html?_ijt=r239dokaeq5cue5ad7odktlcdh#">Pedidos</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/funcionarios.html?_ijt=hemcprhrtacmduqjs9ntjsck10">Funcionários</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/status.html?_ijt=kfgvpbhdevnl896it7ut617g4g">Status</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/total_pedidos.html?_ijt=j7a8h1bv29t2r2a9cmirfpsvte">Total de pedidos</a>
-    </nav>
-  </div>
-</header>
-
-<div class="funcionario">
-  <h1 class="nome_funcionario">Funcionários</h1>
-
-  <div class="cards-funcionario">
-
-    <!-- Card 1 -->
-    <div class="funcionarios">
-      <div class="numero-funcionario">1</div>
-      <div class="informacoes_funcionario">
-        <p><strong>Nome:</strong> Júlia</p>
-        <p><strong>Telefone:</strong> 18 991658932</p>
-        <p><strong>CPF:</strong> 25689333964</p>
-        <p><strong>CF:</strong> 2356</p>
-      </div>
-      <a class="botao_editar_funcionario" href="http://localhost:63342/projeto_finalWEb/templates/editar_cadastro_funcionario.html?_ijt=bj7htorgiick0i26njiaso9elh">Editar</a>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="funcionarios">
-      <div class="numero-funcionario">2</div>
-      <div class="informacoes_funcionario">
-        <p><strong>Nome:</strong> Dener</p>
-        <p><strong>Telefone:</strong> 18 99108-5823</p>
-        <p><strong>CPF:</strong> 2559816868545</p>
-        <p><strong>CF:</strong> 0894</p>
-      </div>
-      <a class="botao_editar_funcionario" href="http://localhost:63342/projeto_finalWEb/templates/editar_cadastro_funcionario.html?_ijt=bj7htorgiick0i26njiaso9elh">Editar</a>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="funcionarios">
-      <div class="numero-funcionario">3</div>
-      <div class="informacoes_funcionario">
-        <p><strong>Nome:</strong> Bruno</p>
-        <p><strong>Telefone:</strong> 18 9916869</p>
-        <p><strong>CPF:</strong> 56971682655262</p>
-        <p><strong>CF:</strong> 6969</p>
-      </div>
-      <a class="botao_editar_funcionario" href="http://localhost:63342/projeto_finalWEb/templates/editar_cadastro_funcionario.html?_ijt=bj7htorgiick0i26njiaso9elh">Editar</a>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="funcionarios">
-      <div class="numero-funcionario">4</div>
-      <div class="informacoes_funcionario">
-        <p><strong>Nome:</strong> Bruna</p>
-        <p><strong>Telefone:</strong> 18 9916869</p>
-        <p><strong>CPF:</strong> 56971682655262</p>
-        <p><strong>CF:</strong> 6969</p>
-      </div>
-      <a class="botao_editar_funcionario" href="http://localhost:63342/projeto_finalWEb/templates/editar_cadastro_funcionario.html?_ijt=bj7htorgiick0i26njiaso9elh">Editar</a>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="funcionarios">
-      <div class="numero-funcionario">5</div>
-
-      <div class="informacoes_funcionario">
-        <p><strong>Nome:</strong> Dener</p>
-        <p><strong>Telefone:</strong> 18 99108-5823</p>
-        <p><strong>CPF:</strong> 2559816868545</p>
-        <p><strong>CF:</strong> 0894</p>
-      </div>
-
-      <a class="botao_editar_funcionario" href="http://localhost:63342/projeto_finalWEb/templates/editar_cadastro_funcionario.html?_ijt=bj7htorgiick0i26njiaso9elh">Editar</a>
-    </div>
-  </div>
+{% block conteudo %}
+<div class="cabecalho">
+    <h1>Funcionários</h1>
+    <button type="button" class="button-cadastrar">
+        <a href="{{ url_for('usuario_cadastro') }}" alt="Ícone de pessoa">Novo funcionário</a>
+    </button>
 </div>
-
-
-
-
-</body>
-</html>
+<div class="conteiner-lista">
+    {% for aluno in alunos %}
+    <div class="card">
+        <h2>Nome: {{ aluno.nome }}</h2>
+        <p>ID: {{ aluno.id_usuario}}</p>
+        <p>Papel: {{ aluno.papel }}</p>
+        <p>Email: {{ aluno.email }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
