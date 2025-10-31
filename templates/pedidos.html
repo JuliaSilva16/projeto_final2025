@@ -1,103 +1,101 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Lista de pedidos</title>
-  <link rel="stylesheet" href="/static/estetica.css">
-</head>
-<body>
+{% extends 'template.html' %}
 
-<header>
-  <!-- Logo à esquerda -->
-  <div class="conteiner">
-        <div  class="logo" style="cursor: pointer;"><a href="/static/logo.png"><img class="imagem_login" src='/static/logo.png'></a></div>
-  </div>
+{% block title %}Lista de Pedidos{% endblock %}
 
-    <!-- Área direita: usuário + menu -->
-  <div class="usuario_menu">
-    <!-- Usuário -->
-    <div class="icones">
-
-      <div class="icone_mais" id="botao_mais">
-          <img src="/static/mais.png" alt="" style="width: 25px; height: 25px;">
-      </div>
-      <div class="icone" id="icone-perfil">
-        <img src="/static/perfil.png" alt="" style="width: 25px; height: 25px; cursor: pointer;">
-      </div>
-
-      <!-- MENU QUE APARECE AO CLICAR -->
-      <div class="menu-perfil" id="menu-perfil">
-      <a href="#">👤 Ver perfil</a>
-      <a href="#">✏️ Editar perfil</a>
-      <a href="#">🚪 Sair</a>
-      </div>
-
-      <div class="nome-cargo">
-        <p class="nome">GAJUMA</p>
-        <p class="cargo">Admin</p>
-      </div>
+{% block conteudo %}
+<div class="p-4 md:p-8">
+    <div class="cabecalho flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Pedidos Recebidos</h1>
+        <!-- O botão "Criar Novo Pedido" foi removido conforme solicitado -->
     </div>
 
-    <!-- Menu abaixo do usuário -->
-    <nav class="menu">
-      <a href="http://localhost:63342/projeto_finalWEb/templates/home.html?_ijt=jgkm1rkcqpnancthbkrqj2r3hq">Home</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/alimentos.html?_ijt=4indtctctq9fdftqvuh1hs3go2">Alimentos</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/pedidos.html?_ijt=r239dokaeq5cue5ad7odktlcdh#">Pedidos</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/funcionarios.html?_ijt=hemcprhrtacmduqjs9ntjsck10">Funcionários</a>
-      <a href="http://localhost:63342/projeto_finalWEb/templates/status.html?_ijt=kfgvpbhdevnl896it7ut617g4g">Status</a>
-    </nav>
-  </div>
-</header>
+    <!-- Barra de Filtros e Pesquisa -->
+    <div class="mb-6 flex flex-col md:flex-row gap-4">
+        <input type="text" placeholder="Buscar por ID, Aluno ou Pedido..."
+               class="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-orange-500 focus:border-orange-500 flex-grow">
 
-<!-- Painel de cadastro -->
-<div class="painel-cadastro" id="painel-cadastro">
-  <a href="http://localhost:63342/projeto_finalWEb/templates/cadastro_funcionario.html?_ijt=pmfmm49jgqui8kvmh9s85hgoq3">Cadastrar funcionário</a>
-  <a href="http://localhost:63342/projeto_finalWEb/templates/cadastro_alimentos.html?_ijt=pmfmm49jgqui8kvmh9s85hgoq3">Cadastrar Alimento</a>
+        <!-- O filtro de status foi simplificado para refletir apenas 'pedido' e 'concluido' -->
+        <select class="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-orange-500 focus:border-orange-500 md:w-48">
+            <option value="">Filtrar por Status</option>
+            <option value="pedido">Em Processamento</option>
+            <option value="concluido">Concluído</option>
+        </select>
+
+        <button type="button" class="button-primary w-full md:w-auto px-6 py-3">
+            Aplicar Filtro
+        </button>
+    </div>
+
+    <!-- Container da Lista de Pedidos -->
+    <div class="conteiner-lista grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        {% set filtered_orders_exist = false %}
+        {% for pedido in pedidos %}
+        {% if pedido.status == 'pedido' or pedido.status == 'concluido' %}
+            {% set filtered_orders_exist = true %}
+
+            <!-- Classe do Card baseada no Status -->
+            <div class="card bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-t-4
+                {% if pedido.status == 'concluido' %} border-t-green-500
+                {% elif pedido.status == 'pedido' %} border-t-orange-500
+                {% else %} border-t-gray-300
+                {% endif %}">
+
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-3">
+                        <h2 class="text-xl font-bold text-gray-900 truncate">Pedido #{{ pedido.id_pedido }}</h2>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full
+                            {% if pedido.status == 'concluido' %} bg-green-100 text-green-700
+                            {% elif pedido.status == 'pedido' %} bg-orange-100 text-orange-700
+                            {% else %} bg-gray-100 text-gray-600
+                            {% endif %}">
+                            {{ pedido.status | upper }}
+                        </span>
+                    </div>
+
+                    <!-- Detalhes do Pedido -->
+                    <p class="text-sm text-gray-600 mb-1">
+                        <strong class="font-medium">Aluno:</strong> {{ pedido.nome_aluno | default('N/A') }}
+                    </p>
+                    <p class="text-sm text-gray-600 mb-1">
+                        <strong class="font-medium">Item:</strong> {{ pedido.nome_pedido | default('N/A') }} (x{{ pedido.quantidade_pedido | default(1) }})
+                    </p>
+                    <p class="text-sm text-gray-600 mb-3">
+                        <strong class="font-medium">Pagamento:</strong>
+                        <span class="font-semibold
+                            {% if pedido.status_pagamento == 'pago' %} text-green-600
+                            {% else %} text-red-600
+                            {% endif %}">
+                            {{ pedido.status_pagamento | upper | default('PENDENTE') }}
+                        </span>
+                    </p>
+
+                    <div class="flex justify-between items-end mt-4">
+                        <span class="text-lg font-bold text-orange-600">
+                            R$ {{ "%.2f" | format(pedido.valor_pedido | default(0) * pedido.quantidade_pedido | default(1)) }}
+                        </span>
+
+                        <!-- Botão de Concluir (Apenas para status 'pedido') -->
+                        {% if pedido.status == 'pedido' %}
+                        <form method="POST" action="{{ url_for('concluir_pedido', id_pedido=pedido.id_pedido) }}" onsubmit="return confirm('Tem certeza que deseja marcar este pedido como CONCLUÍDO?');">
+                            <button type="submit" class="bg-green-500 text-white text-xs font-bold py-1 px-3 rounded-full hover:bg-green-600 transition duration-150 shadow-md">
+                                Concluído
+                            </button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+
+        <!-- Mensagem de lista vazia -->
+        {% if not pedidos or not filtered_orders_exist %}
+        <div class="col-span-full text-center py-12 bg-white rounded-xl shadow-lg">
+            <p class="text-xl text-gray-500">Nenhum pedido <span class="font-semibold">Em Processamento</span> ou <span class="font-semibold">Concluído</span> encontrado.</p>
+        </div>
+        {% endif %}
+
+    </div>
 </div>
-
-
-<div class="pedido">
-  <h1 class="nome_pedido">Pedidos</h1>
-  <div class="pedidos">
-    <div class="informacoes">
-      <p><strong>Código:</strong> 12345</p>
-      <p><strong>Descrição:</strong> Produto Exemplo</p>
-      <p><strong>Valor:</strong> R$ 50,00</p>
-      <p><strong>Quantidade:</strong> 2</p>
-    </div>
-    <div class="numero-pedido">1</div>
-  </div>
-
-  <div class="pedidos">
-    <div class="informacoes">
-      <p><strong>Código:</strong> 12346</p>
-      <p><strong>Descrição:</strong> Outro Produto</p>
-      <p><strong>Valor:</strong> R$ 75,00</p>
-      <p><strong>Quantidade:</strong> 1</p>
-    </div>
-    <div class="numero-pedido">2</div>
-  </div>
-</div>
-
-
-<script>
-  const iconePerfil = document.getElementById("icone-perfil");
-  const menuPerfil = document.getElementById("menu-perfil");
-
-  iconePerfil.addEventListener("click", () => {
-    menuPerfil.style.display =
-      menuPerfil.style.display === "block" ? "none" : "block";
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!iconePerfil.contains(event.target) && !menuPerfil.contains(event.target)) {
-      menuPerfil.style.display = "none";
-    }
-  });
-</script>
-
-
-<script src="main.js"></script>
-
-</body>
-</html>
+{% endblock %}
